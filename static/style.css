@@ -1,0 +1,20 @@
+h1 {
+    color: black
+}
+
+#navigation-button {
+    color: white;
+    background-color: blue;
+    box-shadow: darkgray;
+    margin-left: 5px;
+}
+#resident-button {
+    color: black;
+    background-color: darkgrey;
+    box-shadow: darkgray;
+    margin-left: 5px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}

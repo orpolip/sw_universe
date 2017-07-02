@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='style.css') }}">
+</head>
+
+<body>
+    <h1>STAR WARS universe planets</h1>
+    <form action="/index/">
+        <input id='styled_button' type="submit" name="prev" value="previous"></input>
+        <input id='styled_button' type="submit" name="next" value="next"></input>
+    </form>
+    <br>
+    <table>
+        <th>Name</th>
+        <th>Diameter</th>
+        <th>Terrain</th>
+        <th>Climate</th>
+        <th>surface water percentage</th>
+        <th>population</th>
+        <th>residents</th>
+        {% for planet in table %}
+        <tr>
+            <td>{{ planet.name }}</td>
+            <td>{{ planet.diameter }} km</td>
+            <td>{{ planet.climate }}</td>
+            <td>{{ planet.terrain }}</td>
+            <td>{{ planet.surface_water }}%</td>
+            <td>{{ planet.population }} people</td>
+            {% if planet.residents %}
+            <td><button type="submit" id="resident-button">{{ planet.residents|length }} Resident(s)</button></td>
+            {% else %}
+            <td>No known residents</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
